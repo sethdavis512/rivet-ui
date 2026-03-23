@@ -86,7 +86,8 @@ Use `bg-surface` for card/panel backgrounds — never `bg-white`. The `surface` 
 Subpath exports for every component in kebab-case (`rivet-ui/button`, `rivet-ui/badge`, etc.), plus:
 - `rivet-ui` — all components, variants, utilities
 - `rivet-ui/utils` — `cn()` only
-- `rivet-ui/styles` — CSS stylesheet
+- `rivet-ui/styles` — CSS stylesheet (pre-built bundle with Tailwind reset + component styles)
+- `rivet-ui/theme` — standalone `@theme` preset for Tailwind v4 consumers (tokens only, no reset)
 - `rivet-ui/fonts` — opt-in Lora font import
 
 ### Releasing

@@ -76,5 +76,6 @@ if (cssProc.exitCode !== 0) {
 }
 
 await Bun.write('dist/fonts.css', Bun.file('src/fonts.css'));
+await Bun.write('dist/theme.css', Bun.file('src/theme.css'));
 
 console.log('✓ Build complete');
