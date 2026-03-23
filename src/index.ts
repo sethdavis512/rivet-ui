@@ -1,0 +1,370 @@
+// Components
+export { Button, buttonVariants } from './components/Button';
+export type { ButtonProps } from './components/Button';
+
+export { Input, inputVariants } from './components/Input';
+export type { InputProps } from './components/Input';
+
+export {
+    Card,
+    CardHeader,
+    CardTitle,
+    CardContent,
+    CardFooter
+} from './components/Card';
+
+export { Badge, badgeVariants } from './components/Badge';
+export type { BadgeProps } from './components/Badge';
+
+export { Alert, AlertTitle, AlertDescription, alertVariants } from './components/Alert';
+export type { AlertProps } from './components/Alert';
+
+export { Avatar, avatarVariants } from './components/Avatar';
+export type { AvatarProps } from './components/Avatar';
+
+export {
+    ComboboxRoot,
+    ComboboxPortal,
+    ComboboxGroup,
+    ComboboxCollection,
+    ComboboxValue,
+    ComboboxChips,
+    ComboboxChip,
+    ComboboxChipRemove,
+    ComboboxInput,
+    ComboboxTrigger,
+    ComboboxClear,
+    ComboboxPositioner,
+    ComboboxPopup,
+    ComboboxList,
+    ComboboxItem,
+    ComboboxItemIndicator,
+    ComboboxItemText,
+    ComboboxEmpty,
+    ComboboxSeparator,
+    ComboboxGroupLabel,
+    ComboboxStatus,
+    ComboboxIcon
+} from './components/Combobox';
+
+export {
+    CheckboxRoot,
+    CheckboxIndicator,
+    CheckboxGroup
+} from './components/Checkbox';
+
+export { RadioGroup, RadioRoot, RadioIndicator } from './components/Radio';
+
+export { SwitchRoot, SwitchThumb } from './components/Switch';
+
+export {
+    SelectRoot,
+    SelectPortal,
+    SelectBackdrop,
+    SelectGroup,
+    SelectSeparator,
+    SelectTrigger,
+    SelectValue,
+    SelectIcon,
+    SelectPositioner,
+    SelectPopup,
+    SelectList,
+    SelectItem,
+    SelectItemText,
+    SelectItemIndicator,
+    SelectGroupLabel,
+    SelectScrollUpArrow,
+    SelectScrollDownArrow
+} from './components/Select';
+
+export {
+    FieldRoot,
+    FieldLabel,
+    FieldControl,
+    FieldDescription,
+    FieldError,
+    FieldItem,
+    FieldValidity
+} from './components/Field';
+
+export { FieldsetRoot, FieldsetLegend } from './components/Fieldset';
+
+export {
+    DialogRoot,
+    DialogPortal,
+    DialogBackdrop,
+    DialogViewport,
+    DialogPopup,
+    DialogTitle,
+    DialogDescription,
+    DialogClose,
+    DialogTrigger
+} from './components/Dialog';
+
+export {
+    AlertDialogRoot,
+    AlertDialogPortal,
+    AlertDialogBackdrop,
+    AlertDialogViewport,
+    AlertDialogPopup,
+    AlertDialogTitle,
+    AlertDialogDescription,
+    AlertDialogClose,
+    AlertDialogTrigger
+} from './components/AlertDialog';
+
+export {
+    DrawerRoot,
+    DrawerPortal,
+    DrawerTrigger,
+    DrawerBackdrop,
+    DrawerViewport,
+    DrawerPopup,
+    DrawerContent,
+    DrawerHandle,
+    DrawerTitle,
+    DrawerDescription,
+    DrawerClose
+} from './components/Drawer';
+
+export {
+    TooltipProvider,
+    TooltipRoot,
+    TooltipPortal,
+    TooltipTrigger,
+    TooltipPositioner,
+    TooltipPopup,
+    TooltipArrow
+} from './components/Tooltip';
+
+export {
+    PopoverRoot,
+    PopoverPortal,
+    PopoverTrigger,
+    PopoverBackdrop,
+    PopoverPositioner,
+    PopoverPopup,
+    PopoverTitle,
+    PopoverDescription,
+    PopoverClose,
+    PopoverArrow
+} from './components/Popover';
+
+export {
+    PreviewCardRoot,
+    PreviewCardPortal,
+    PreviewCardTrigger,
+    PreviewCardBackdrop,
+    PreviewCardPositioner,
+    PreviewCardPopup,
+    PreviewCardArrow
+} from './components/PreviewCard';
+
+export {
+    TabsRoot,
+    TabsList,
+    TabsTab,
+    TabsIndicator,
+    TabsPanel
+} from './components/Tabs';
+
+export {
+    AccordionRoot,
+    AccordionItem,
+    AccordionHeader,
+    AccordionTrigger,
+    AccordionPanel
+} from './components/Accordion';
+
+export {
+    CollapsibleRoot,
+    CollapsibleTrigger,
+    CollapsiblePanel
+} from './components/Collapsible';
+
+export { SeparatorRoot } from './components/Separator';
+
+// ── Menus & Toolbar ──────────────────────────────────────────────────────────
+
+export {
+    MenuRoot,
+    MenuTrigger,
+    MenuPortal,
+    MenuBackdrop,
+    MenuPositioner,
+    MenuPopup,
+    MenuArrow,
+    MenuItem,
+    MenuLinkItem,
+    MenuSeparator,
+    MenuGroup,
+    MenuGroupLabel,
+    MenuRadioGroup,
+    MenuRadioItem,
+    MenuRadioItemIndicator,
+    MenuCheckboxItem,
+    MenuCheckboxItemIndicator,
+    MenuSubmenuRoot,
+    MenuSubmenuTrigger
+} from './components/Menu';
+
+export {
+    ContextMenuRoot,
+    ContextMenuTrigger,
+    ContextMenuPortal,
+    ContextMenuBackdrop,
+    ContextMenuPositioner,
+    ContextMenuPopup,
+    ContextMenuArrow,
+    ContextMenuItem,
+    ContextMenuLinkItem,
+    ContextMenuSeparator,
+    ContextMenuGroup,
+    ContextMenuGroupLabel,
+    ContextMenuRadioGroup,
+    ContextMenuRadioItem,
+    ContextMenuRadioItemIndicator,
+    ContextMenuCheckboxItem,
+    ContextMenuCheckboxItemIndicator,
+    ContextMenuSubmenuRoot,
+    ContextMenuSubmenuTrigger
+} from './components/ContextMenu';
+
+export { MenubarRoot } from './components/Menubar';
+
+export {
+    ToolbarRoot,
+    ToolbarButton,
+    ToolbarLink,
+    ToolbarSeparator,
+    ToolbarGroup,
+    ToolbarInput
+} from './components/Toolbar';
+
+// ── Patterns ─────────────────────────────────────────────────────────────────
+
+export { SearchField } from './components/SearchField';
+export type { SearchFieldProps } from './components/SearchField';
+
+export { AvatarLabel } from './components/AvatarLabel';
+export type { AvatarLabelProps } from './components/AvatarLabel';
+
+// ── Projects ─────────────────────────────────────────────────────────────────
+
+export { ProfileCard } from './components/ProfileCard';
+export type { ProfileCardProps } from './components/ProfileCard';
+
+export { PageHeader } from './components/PageHeader';
+export type { PageHeaderProps } from './components/PageHeader';
+
+export { ConfirmDialog } from './components/ConfirmDialog';
+export type { ConfirmDialogProps } from './components/ConfirmDialog';
+
+// ── Primitives ───────────────────────────────────────────────────────────────
+
+export {
+    SliderRoot,
+    SliderControl,
+    SliderTrack,
+    SliderIndicator,
+    SliderThumb,
+    SliderValue
+} from './components/Slider';
+
+export {
+    ProgressRoot,
+    ProgressLabel,
+    ProgressTrack,
+    ProgressIndicator,
+    ProgressValue
+} from './components/Progress';
+
+export {
+    MeterRoot,
+    MeterLabel,
+    MeterTrack,
+    MeterIndicator,
+    MeterValue
+} from './components/Meter';
+
+export { ToggleRoot } from './components/Toggle';
+
+export { ToggleGroupRoot } from './components/ToggleGroup';
+
+export {
+    NumberFieldRoot,
+    NumberFieldGroup,
+    NumberFieldDecrement,
+    NumberFieldIncrement,
+    NumberFieldInput,
+    NumberFieldScrubArea,
+    NumberFieldScrubAreaCursor
+} from './components/NumberField';
+
+export {
+    ScrollAreaRoot,
+    ScrollAreaViewport,
+    ScrollAreaContent,
+    ScrollAreaScrollbar,
+    ScrollAreaThumb,
+    ScrollAreaCorner
+} from './components/ScrollArea';
+
+export { FormRoot } from './components/Form';
+
+export {
+    ToastProvider,
+    ToastPortal,
+    ToastViewport,
+    ToastRoot,
+    ToastContent,
+    ToastTitle,
+    ToastDescription,
+    ToastClose,
+    ToastAction,
+    ToastPositioner,
+    Toaster,
+    useToastManager,
+    createToastManager
+} from './components/Toast';
+
+export {
+    NavigationMenuPortal,
+    NavigationMenuRoot,
+    NavigationMenuList,
+    NavigationMenuItem,
+    NavigationMenuTrigger,
+    NavigationMenuIcon,
+    NavigationMenuPositioner,
+    NavigationMenuViewport,
+    NavigationMenuPopup,
+    NavigationMenuContent,
+    NavigationMenuLink
+} from './components/NavigationMenu';
+
+export {
+    AutocompleteRoot,
+    AutocompleteValue,
+    AutocompletePortal,
+    AutocompleteGroup,
+    AutocompleteCollection,
+    AutocompleteInput,
+    AutocompleteTrigger,
+    AutocompleteIcon,
+    AutocompleteClear,
+    AutocompletePositioner,
+    AutocompletePopup,
+    AutocompleteList,
+    AutocompleteItem,
+    AutocompleteEmpty,
+    AutocompleteGroupLabel
+} from './components/Autocomplete';
+
+// ── Utilities ─────────────────────────────────────────────────────────────────
+
+// Utilities — exporting cn is optional, but useful for consumers
+// who want consistent class merging with your library
+export { cn } from './utils/cn';
+
+// ── CVA utilities — for consumers building custom components ─────────────────
+export { cva, type VariantProps } from 'cva';

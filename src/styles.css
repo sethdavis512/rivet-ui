@@ -1,0 +1,45 @@
+/* src/styles.css */
+@import 'tailwindcss';
+@source "./components/";
+
+/* ── Dark mode: class-based toggle ─────────────────────────────── */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    /* ── Rivet UI — Craft Palette ──────────────────────────────────── */
+    --font-display: 'Lora', Georgia, serif;
+
+    --color-ribbon: oklch(
+        56% 0.11 172
+    ); /* warm sage-teal — rosier than pure teal   */
+    --color-mustard: oklch(
+        72% 0.14 75
+    ); /* rich golden ochre — honey warmth         */
+    --color-kraft: oklch(
+        34% 0.05 42
+    ); /* warm rose-brown — ink on aged paper      */
+    --color-denim: oklch(
+        44% 0.12 248
+    ); /* warm navy — slightly richer indigo       */
+    --color-canvas: oklch(
+        95% 0.012 65
+    ); /* warm cream — linen with rosy warmth      */
+    --color-spool: oklch(
+        54% 0.18 18
+    ); /* warm coral — richer, more flushed        */
+
+    /* ── Semantic surface token ─────────────────────────────────── */
+    --color-surface: #fdf8f4;
+}
+
+/* ── After Hours — Dark Theme ─────────────────────────────────── */
+.dark {
+    --color-ribbon: oklch(72% 0.11 172);
+    --color-mustard: oklch(80% 0.13 75);
+    --color-kraft: oklch(88% 0.04 42);
+    --color-denim: oklch(68% 0.12 248);
+    --color-canvas: oklch(21% 0.02 160);
+    --color-spool: oklch(68% 0.16 18);
+    --color-surface: oklch(15% 0.02 160);
+    --tw-ring-offset-color: var(--color-surface);
+}
