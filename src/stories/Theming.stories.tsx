@@ -111,6 +111,66 @@ const themes = {
         '--color-spool': 'oklch(65% 0.22 330)',
         '--color-surface': '#f8fdf5',
         '--font-display': "'Georgia', serif"
+    },
+    'Inkwell': {
+        '--color-ribbon': 'oklch(52% 0.12 265)',
+        '--color-mustard': 'oklch(72% 0.12 70)',
+        '--color-kraft': 'oklch(30% 0.03 260)',
+        '--color-denim': 'oklch(40% 0.14 270)',
+        '--color-canvas': 'oklch(95% 0.008 260)',
+        '--color-spool': 'oklch(52% 0.16 350)',
+        '--color-surface': '#f5f6fa',
+        '--font-display': "'Georgia', serif"
+    },
+    'Kiln': {
+        '--color-ribbon': 'oklch(58% 0.12 50)',
+        '--color-mustard': 'oklch(72% 0.14 70)',
+        '--color-kraft': 'oklch(32% 0.05 45)',
+        '--color-denim': 'oklch(45% 0.12 35)',
+        '--color-canvas': 'oklch(95% 0.015 55)',
+        '--color-spool': 'oklch(50% 0.17 15)',
+        '--color-surface': '#fdf6f0',
+        '--font-display': "'Georgia', serif"
+    },
+    'Patina': {
+        '--color-ribbon': 'oklch(55% 0.10 185)',
+        '--color-mustard': 'oklch(73% 0.11 80)',
+        '--color-kraft': 'oklch(32% 0.03 190)',
+        '--color-denim': 'oklch(43% 0.10 195)',
+        '--color-canvas': 'oklch(95% 0.008 185)',
+        '--color-spool': 'oklch(55% 0.15 30)',
+        '--color-surface': '#f4f7f6',
+        '--font-display': "'Georgia', serif"
+    },
+    'Madder': {
+        '--color-ribbon': 'oklch(50% 0.14 15)',
+        '--color-mustard': 'oklch(72% 0.12 65)',
+        '--color-kraft': 'oklch(30% 0.04 15)',
+        '--color-denim': 'oklch(42% 0.14 10)',
+        '--color-canvas': 'oklch(95% 0.01 15)',
+        '--color-spool': 'oklch(48% 0.18 360)',
+        '--color-surface': '#fdf5f5',
+        '--font-display': "'Georgia', serif"
+    },
+    'Bazaar': {
+        '--color-ribbon': 'oklch(62% 0.18 190)',
+        '--color-mustard': 'oklch(78% 0.17 80)',
+        '--color-kraft': 'oklch(32% 0.06 40)',
+        '--color-denim': 'oklch(50% 0.22 300)',
+        '--color-canvas': 'oklch(95% 0.015 70)',
+        '--color-spool': 'oklch(62% 0.22 25)',
+        '--color-surface': '#fefaf5',
+        '--font-display': "'Georgia', serif"
+    },
+    'Umber': {
+        '--color-ribbon': 'oklch(50% 0.06 55)',
+        '--color-mustard': 'oklch(70% 0.08 65)',
+        '--color-kraft': 'oklch(28% 0.03 50)',
+        '--color-denim': 'oklch(40% 0.07 50)',
+        '--color-canvas': 'oklch(94% 0.01 60)',
+        '--color-spool': 'oklch(48% 0.12 25)',
+        '--color-surface': '#f8f5f0',
+        '--font-display': "'Georgia', serif"
     }
 } as const;
 
