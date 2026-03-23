@@ -524,11 +524,17 @@ function CustomThemeGuide() {
                         1
                     </span>
                     <p className="font-semibold text-kraft">
-                        Import the stylesheet
+                        Import styles
                     </p>
                 </div>
-                <pre className="rounded-lg bg-canvas/40 p-4 text-xs text-kraft/80">{`// In your app entry point or global CSS
-import 'rivet-ui/styles';`}</pre>
+                <pre className="rounded-lg bg-canvas/40 p-4 text-xs text-kraft/80">{`// Option A — pre-built bundle (includes Tailwind reset + component styles)
+import 'rivet-ui/styles';
+
+// Option B — Tailwind v4 theme preset (tokens only, no reset)
+// Use this when your app already runs Tailwind v4:
+// In your app.css:
+@import 'tailwindcss';
+@import 'rivet-ui/theme';`}</pre>
             </div>
 
             {/* Step 2 */}
