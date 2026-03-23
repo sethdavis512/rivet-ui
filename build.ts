@@ -38,6 +38,30 @@ if (!result.success) {
     process.exit(1);
 }
 
+// Fix Bun bundler duplicate export blocks (splitting + re-exports bug)
+const jsGlob = new Glob('dist/**/*.js');
+for await (const file of jsGlob.scan('.')) {
+    const content = await Bun.file(file).text();
+    const exportBlockRe = /^export \{[^}]*\};$/gm;
+    const matches = content.match(exportBlockRe);
+    if (matches && matches.length > 1) {
+        const allNames = new Set<string>();
+        for (const block of matches) {
+            const inner = block.slice('export {'.length, -'};'.length);
+            for (const name of inner.split(',')) {
+                const trimmed = name.trim();
+                if (trimmed) allNames.add(trimmed);
+            }
+        }
+        const merged = `export {\n  ${[...allNames].join(',\n  ')}\n};`;
+        const fixed = content.replace(exportBlockRe, () => '').replace(
+            /\/\/#\s*debugId=/,
+            `${merged}\n\n//# debugId=`
+        );
+        await Bun.write(file, fixed);
+    }
+}
+
 const cssProc = Bun.spawnSync([
     'bunx', '@tailwindcss/cli',
     '-i', 'src/styles.css',
