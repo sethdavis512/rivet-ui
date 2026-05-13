@@ -93,8 +93,14 @@ Subpath exports for every component in kebab-case (`rivet-ui/button`, `rivet-ui/
 ### Releasing
 
 - **Do not run `npm publish` directly.** GitHub Actions handles publishing.
-- Uses Changesets for version management.
-- To release: bump version in `package.json`, commit, push to `main`.
+- **Do not edit `version` in `package.json` directly.** Changesets owns the version.
+- To ship a change:
+    1. Add a changeset file: `bunx changeset` (or hand-write a markdown file in `.changeset/` with `--- "rivet-ui": patch|minor|major ---` frontmatter and a one-line summary).
+    2. Commit the changeset alongside your code change and push to `main`.
+    3. The Release workflow opens (or updates) a bot PR titled `chore: version packages` that aggregates all pending changesets into the next version.
+    4. Merging that PR publishes to npm.
+- Changeset bump types: `patch` for bug fixes / docs / build tweaks, `minor` for new components or new public API, `major` for breaking changes.
+- **Repo setting required:** Settings → Actions → General → "Allow GitHub Actions to create and approve pull requests" must be enabled, or the bot PR step fails.
 
 ### Key Files
 
