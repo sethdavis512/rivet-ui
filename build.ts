@@ -38,27 +38,33 @@ if (!result.success) {
     process.exit(1);
 }
 
-// Fix Bun bundler duplicate export blocks (splitting + re-exports bug)
-const jsGlob = new Glob('dist/**/*.js');
-for await (const file of jsGlob.scan('.')) {
-    const content = await Bun.file(file).text();
-    const exportBlockRe = /^export \{[^}]*\};$/gm;
-    const matches = content.match(exportBlockRe);
-    if (matches && matches.length > 1) {
-        const allNames = new Set<string>();
-        for (const block of matches) {
-            const inner = block.slice('export {'.length, -'};'.length);
-            for (const name of inner.split(',')) {
-                const trimmed = name.trim();
-                if (trimmed) allNames.add(trimmed);
-            }
+// ── Deduplicate exports ─────────────────────────────────────────────────────
+// Bun.build with splitting + multiple entrypoints can emit duplicate export
+// statements (the inlined module exports AND the barrel re-exports). This
+// causes fatal "Duplicate export" errors in Node's ESM loader and Vite.
+const dedupeGlob = new Glob('dist/**/*.js');
+for await (const file of dedupeGlob.scan('.')) {
+    let content = await Bun.file(file).text();
+    const seen = new Set<string>();
+    const updated = content.replace(
+        /export\s*\{([^}]+)\}\s*;?/g,
+        (_match, inner: string) => {
+            const names = inner
+                .split(',')
+                .map((s) => s.trim())
+                .filter(Boolean);
+            const fresh = names.filter((n) => {
+                const exported = n.split(/\s+as\s+/).pop()!.trim();
+                if (seen.has(exported)) return false;
+                seen.add(exported);
+                return true;
+            });
+            if (fresh.length === 0) return '';
+            return `export { ${fresh.join(', ')} };`;
         }
-        const merged = `export {\n  ${[...allNames].join(',\n  ')}\n};`;
-        const fixed = content.replace(exportBlockRe, () => '').replace(
-            /\/\/#\s*debugId=/,
-            `${merged}\n\n//# debugId=`
-        );
-        await Bun.write(file, fixed);
+    );
+    if (updated !== content) {
+        await Bun.write(file, updated);
     }
 }
 
